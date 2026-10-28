@@ -75,7 +75,7 @@
   a { color: var(--marinho); text-underline-offset: .18em; }
   a, button, input, select, label { touch-action: manipulation; }
   :focus-visible { outline: 3px solid var(--luz); outline-offset: 3px; }
-  h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 700; line-height: 1.06; margin: 0; letter-spacing: -.025em; text-wrap: balance; overflow-wrap: break-word; color: var(--marinho-escuro); }
+  h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 700; line-height: 1.06; margin: 0; letter-spacing: -.025em; text-wrap: balance; overflow-wrap: anywhere; color: var(--marinho-escuro); }
   h2 { font-size: clamp(1.9rem, 1.35rem + 2.2vw, 2.9rem); }
   h3 { font-size: 1.22rem; letter-spacing: -.015em; }
   p { margin: 0; }
@@ -124,7 +124,7 @@
   .menu a:hover { color: var(--marinho); text-decoration: underline; }
   .menu .menu-tel { color: var(--marinho); font-weight: 700; }
   .menu-botao { display: none; }
-  @media (max-width: 960px) {
+  @media (max-width: 1040px) {
     .topo-grade { flex-wrap: nowrap; }
     .menu-botao {
       display: grid; align-content: center; justify-items: center; gap: 5px; flex: none; width: 52px; height: 52px; margin-right: -8px; padding: 0;
@@ -243,10 +243,11 @@
   .ebook svg { width: 46px; height: 46px; fill: none; stroke: var(--marinho); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .ebook strong { display: block; font-family: var(--fonte-titulo); font-size: 1.15rem; font-weight: 700; color: var(--marinho-escuro); letter-spacing: -.01em; }
   @media (max-width: 980px) {
-    .servico-destaque { grid-column: 1 / -1; grid-row: auto; }
     .servico { grid-column: span 6; }
+    .servico-destaque { grid-column: 1 / -1; grid-row: auto; }
   }
   @media (max-width: 640px) {
+    .servicos { grid-template-columns: minmax(0, 1fr); }
     .servico { grid-column: 1 / -1; }
     .servico-destaque ul { grid-template-columns: minmax(0, 1fr); }
     .ebook { grid-template-columns: minmax(0, 1fr); }
