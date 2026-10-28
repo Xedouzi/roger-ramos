@@ -320,7 +320,7 @@
   /* ---------- quem atende ---------- */
   .sobre-grade { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
   .sobre-foto { position: relative; }
-  .sobre-foto img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 30%; border-radius: var(--raio); }
+  .sobre-foto img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: var(--raio); }
   .sobre-texto { display: grid; gap: 1.1rem; }
   .sobre-texto > p { font-size: 1.12rem; max-width: 36rem; }
   .sobre-lista { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; padding: 1.3rem 0 0; margin: .4rem 0 0; border-top: 1px solid var(--linha); list-style: none; }
@@ -339,7 +339,7 @@
   .avaliacoes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin-top: .6rem; }
   .avaliacao { padding: 1.2rem 1.35rem; background: var(--papel); border-radius: var(--raio); }
   .avaliacao p { font-size: 1.05rem; line-height: 1.45; font-weight: 500; }
-  .avaliacao footer { margin-top: .45rem; color: var(--tinta-2); font-size: .9rem; }
+  .avaliacao footer { margin-top: .45rem; color: var(--tinta-2); font-size: .9rem; overflow-wrap: anywhere; }
   .avaliacoes-link { font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
   @media (max-width: 860px) { .consultorio-grade { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 520px) { .avaliacoes { grid-template-columns: minmax(0, 1fr); } }
@@ -534,7 +534,7 @@
   <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
     <div class="envoltorio sobre-grade">
       <div class="sobre-foto" data-revela>
-        <img src="img/roger.webp" width="864" height="1080" alt="Retrato de Roger Ramos" loading="lazy">
+        <img src="img/roger-jaleco.webp" width="850" height="986" alt="Roger Ramos de jaleco branco, de braços cruzados, em frente a uma parede de tijolos" loading="lazy">
       </div>
       <div class="sobre-texto" data-revela style="--i:1">
         <h2 id="titulo-sobre">Quem atende</h2>
@@ -750,7 +750,7 @@ document.addEventListener("click", (e) => { if (!topo.contains(e.target)) menu(f
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && topo.classList.contains("menu-aberto")) { menu(false); menuBotao.focus(); }
 });
-matchMedia("(min-width: 961px)").addEventListener("change", (m) => { if (m.matches) menu(false); });
+matchMedia("(min-width: 1041px)").addEventListener("change", (m) => { if (m.matches) menu(false); });
 
 mostrarFlutuante();
 </script>
