@@ -98,11 +98,11 @@
     display: inline-flex; align-items: center; justify-content: center; gap: .55rem; max-width: 100%;
     min-height: 52px; padding: .75rem 1.35rem; border: 0; border-radius: 999px;
     background: var(--marinho); color: #fff; font: 600 1rem/1.2 var(--fonte); text-decoration: none; text-align: center; cursor: pointer;
-    transition: background-color var(--dur-ui) ease, box-shadow var(--dur-ui) ease, transform .2s var(--ease-out);
+    transition: background-color var(--dur-ui) ease, box-shadow var(--dur-ui) ease, transform .35s var(--ease-out);
   }
   .btn:hover { background: var(--marinho-2); }
   @media (hover: hover) and (pointer: fine) { .btn:hover { transform: scale(1.04); } }
-  .btn:active { transform: scale(.97); }
+  .btn:active { transform: scale(.97); transition-duration: .12s; }
   .btn svg { width: 1.25em; height: 1.25em; flex: none; }
   .btn-luz { background: var(--luz); color: var(--marinho-escuro); }
   .btn-luz:hover { background: #F6C483; }
@@ -229,9 +229,8 @@
     background: conic-gradient(var(--luz) var(--borda), transparent 0 calc(360deg - var(--borda)), var(--luz) 0);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-    transition: --borda .45s var(--ease-out);
+    transition: --borda .8s var(--ease-out);
   }
-  .servico-destaque::after { inset: 0; }
   @media (hover: hover) and (pointer: fine) { .servico:hover::after { --borda: 180deg; } }
   .servico:has(a:focus-visible)::after { --borda: 180deg; }
   @media (prefers-reduced-motion: reduce) { .servico::after { transition: none; } }
@@ -243,7 +242,7 @@
   .servico li::before { content: ""; flex: none; width: 4px; height: .95rem; border-radius: 2px; background: var(--salvia); transform: translateY(.12rem); }
   .servico a:not(.btn) { justify-self: start; margin-top: .3rem; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
   /* consulta: o cartao grande, em marinho, com o ripado ao fundo */
-  .servico-destaque { grid-column: span 8; grid-row: span 2; position: relative; overflow: hidden; isolation: isolate; background: var(--marinho); border: 0; color: #fff; padding: clamp(1.6rem, 3.5vw, 2.6rem); align-content: space-between; }
+  .servico-destaque { grid-column: span 8; grid-row: span 2; position: relative; overflow: clip; overflow-clip-margin: 2px; isolation: isolate; background: var(--marinho); border-color: var(--marinho); color: #fff; padding: clamp(1.6rem, 3.5vw, 2.6rem); align-content: space-between; }
   .servico-destaque h3 { color: #fff; font-size: clamp(1.6rem, 1.15rem + 1.6vw, 2.35rem); line-height: 1.08; }
   .servico-destaque p { color: #D6DBE6; font-size: 1.08rem; max-width: 34rem; }
   .servico-destaque .servico-desenho { background: rgba(242, 182, 106, .16); }
@@ -477,7 +476,7 @@
         </article>
         <div class="ebook" data-revela>
           <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 9h13a4 4 0 0 1 4 4v27a3 3 0 0 0-3-3H8Z"/><path d="M40 9H27a4 4 0 0 0-2 .6M40 9v28H27a3 3 0 0 0-2 .8"/><path d="M30 17h6M30 23h6"/></svg>
-          <p><strong>E-book: 110 receitas calculadas para a sua dieta</strong>Receitas práticas para variar o cardápio sem sair do plano.</p>
+          <p><strong>E-Book: 110 receitas calculadas para a sua dieta</strong>Receitas práticas para variar o cardápio sem sair do plano.</p>
           <a class="btn" href="https://pay.kiwify.com.br/0I21BkY" target="_blank" rel="noopener">Comprar E-Book</a>
         </div>
       </div>
